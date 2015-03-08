@@ -3,9 +3,11 @@ html {
 }
 
 body {
+   background: -webkit-radial-gradient(#2b1339, #380c77);
+   background: radial-gradient(#2b1339, #380c77);
+   color:       #fff;
    font-family: 'Open Sans';
-   color: #fff;
-   min-height: 100%;
+   min-height:  100%;
 }
 
 body.landing {

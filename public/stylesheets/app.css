@@ -2,8 +2,10 @@ html {
   height: 100%; }
 
 body {
-  font-family: 'Open Sans';
+  background: -webkit-radial-gradient(#2b1339, #380c77);
+  background: radial-gradient(#2b1339, #380c77);
   color: white;
+  font-family: 'Open Sans';
   min-height: 100%; }
 
 body.landing {
