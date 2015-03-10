@@ -3,8 +3,9 @@ html {
 }
 
 body {
-   background: -webkit-radial-gradient(#2b1339, #380c77);
-   background: radial-gradient(#2b1339, #380c77);
+   // background: -webkit-radial-gradient(#2b1339, #380c77);
+   // background: radial-gradient(#2b1339, #380c77);
+   background: linear-gradient(0deg, #2b1339, #380c77);
    color:       #fff;
    font-family: 'Open Sans';
    min-height:  100%;
