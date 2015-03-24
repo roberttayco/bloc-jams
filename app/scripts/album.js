@@ -76,6 +76,7 @@ var changeAlbumView = function(album) {
 //  - Use a regex to validate that the url has "/album" in its path.
 if (document.URL.match(/\/album.html/)) {
     $(document).ready(function() {
-        changeAlbumView(albumPicasso);
+        var album = albumPicasso;
+        changeAlbumView(album);
     });
 }
