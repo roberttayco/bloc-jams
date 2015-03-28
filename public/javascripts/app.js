@@ -261,8 +261,14 @@ if (document.URL.match(/\/album.html/)) {
 // require('./album');
 // require('./profile');
 
+    // function shuffle(o) {
+    //     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[i--], o[i] = o[j], o[j] = x);
+    //     return o;
+    // }
+
 angular.module('BlocJams', []).controller('Landing.controller', ['$scope', function($scope) {
     $scope.subText = 'Turn the music up!';
+    $scope.heading = 'Bloc Jams';
 
     $scope.subTextClicked = function() {
         $scope.subText += '!';
@@ -279,6 +285,16 @@ angular.module('BlocJams', []).controller('Landing.controller', ['$scope', funct
         '/images/album-placeholders/album-8.jpg',
         '/images/album-placeholders/album-9.jpg'
     ];
+
+    function shuffle(o) {
+        for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        return o;
+    };
+
+    $scope.headingClicked = function(o) {
+        shuffle($scope.albumURLs);
+    };
+
 }]);
 });
 
