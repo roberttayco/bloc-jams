@@ -3,12 +3,22 @@
 // require('./album');
 // require('./profile');
 
-    // function shuffle(o) {
-    //     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[i--], o[i] = o[j], o[j] = x);
-    //     return o;
-    // }
+// angular.module('BlocJams', []).controller('Landing.controller', ['$scope', function($scope) {
 
-angular.module('BlocJams', []).controller('Landing.controller', ['$scope', function($scope) {
+blocJams = angular.module('BlocJams', ['ui.router']);
+
+blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+
+    $stateProvider.state('landing', {
+        url: '/',
+        controller: 'Landing.controller',
+        templateURL: '/templates/landing.html'
+    });
+
+}]);
+
+blocJams.controller('Landing.controller', ['$scope', function($scope) {
     $scope.subText = 'Turn the music up!';
     $scope.heading = 'Bloc Jams';
 
@@ -36,5 +46,4 @@ angular.module('BlocJams', []).controller('Landing.controller', ['$scope', funct
     $scope.headingClicked = function(o) {
         shuffle($scope.albumURLs);
     };
-
 }]);
