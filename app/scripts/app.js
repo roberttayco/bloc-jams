@@ -13,7 +13,7 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
     $stateProvider.state('landing', {
         url: '/',
         controller: 'Landing.controller',
-        templateURL: '/templates/landing.html'
+        templateUrl: '/templates/landing.html'
     });
 
 }]);
@@ -21,6 +21,7 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
 blocJams.controller('Landing.controller', ['$scope', function($scope) {
     $scope.subText = 'Turn the music up!';
     $scope.heading = 'Bloc Jams';
+    console.log("Landing controller loaded");
 
     $scope.subTextClicked = function() {
         $scope.subText += '!';
