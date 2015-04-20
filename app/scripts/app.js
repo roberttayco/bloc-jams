@@ -109,9 +109,15 @@ blocJams.controller('Album.controller', ['$scope', 'SongPlayer', function($scope
 
 blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
     $scope.songPlayer = SongPlayer;
+
+    SongPlayer.onTimeUpdate(function(event, time) {
+        $scope.$apply(function() {
+            $scope.playTime = time;
+        });
+    });
 }]);
 
-blocJams.service('SongPlayer', function() {
+blocJams.service('SongPlayer', ['$rootScope', function($rootScope) {
     var currentSoundFile = null;
     var trackIndex = function(album, song) {
         return album.songs.indexOf(song);
@@ -153,6 +159,9 @@ blocJams.service('SongPlayer', function() {
                 currentSoundFile.setTime(time);
             }
         },
+        onTimeUpdate: function(callback) {
+            return $rootScope.$on('sound:timeupdate', callback);
+        },
         setSong: function(album, song) {
             if (currentSoundFile) {
                 currentSoundFile.stop();
@@ -163,11 +172,14 @@ blocJams.service('SongPlayer', function() {
                 formats: [ 'mp3' ],
                 preload: true
             });
+            currentSoundFile.bind('timeupdate', function(e) {
+                $rootScope.$broadcast('sound:timeupdate', this.getTime());
+            });
 
             this.play();
         }
     };
-});
+}]);
 
 blocJams.directive('slider', ['$document', function($document) {
     var calculateSliderPercentFromMouseEvent = function($slider, event) {
