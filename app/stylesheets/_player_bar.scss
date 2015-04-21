@@ -75,10 +75,11 @@
         display: inline-block;
 
     i {
-    width: 40px;
-    font-size: 20px;
-    display: inline-block;
-    vertical-align: middle;
+        display:        inline-block;
+        font-size:      20px;
+        text-align:     left;
+        vertical-align: middle;
+        width:          20px;
     }
 
             .slider {
