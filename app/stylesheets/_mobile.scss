@@ -1,0 +1,64 @@
+@media screen and (max-width: 768px) {
+
+.player-header-nav.navbar {
+   .navbar-nav {
+      li { text-align: center; }
+   }
+}
+
+//    Landing view
+//    ===============
+.hero-content {
+   h1,h3 { text-align: center; }
+}
+
+.selling-points {
+   padding: 0;
+
+   .point {
+      padding: 3em .75em;
+
+      h5 { height: 2.25em; }
+      p  {
+         font-size:  1.25em;
+         text-align: center;
+      }
+   }
+}
+
+.landing-album-list {
+   .album-cover {
+      position: relative;
+      left:     calc(50% - 200px);
+   }
+}
+
+//    Collection view
+//    ===============
+.collection-album-container {
+   margin-left:  auto;
+   margin-right: auto;
+   position:     relative;
+   width:        280px; // width of album image
+}
+
+
+//    Player bar component
+//    ====================
+
+.player-bar {
+   .container {
+      width: 80%;
+   }
+   .player-bar-control-group {
+      &.left-controls,
+      &.currently-playing,
+      &.right-controls {
+         display:    block;
+         text-align: center;
+         width:      100%;
+      }
+   }
+}
+
+}

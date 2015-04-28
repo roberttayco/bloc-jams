@@ -18,16 +18,21 @@
     </script>
 </head>
 <body>
-    <nav class="player-header-nav navbar">
+    <nav class="player-header-nav navbar" ng-controller="NavBarController">
         <div class="container">
             <div class='navbar-header'> <!-- Nav Bar -->
                 <a ui-sref="landing" class='logo navbar-left'>
                     <img src="/images/blocjams.png">
                 </a>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a ui-sref="collection">Library</a></li>
-            </ul>
+            <button ng-click="isCollapsed = !isCollapsed"></button>
+            <div collapse="isCollapsed">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a ui-sref="#">Playlists</a></li>
+                    <li><a ui-sref="collection">Library</a></li>
+                    <li><a ui-sref="#">Profile</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 

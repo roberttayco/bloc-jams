@@ -38,6 +38,10 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
     });
 }]);
 
+blocJams.controller('NavBarController', ['$scope', function ($scope) {
+    $scope.isCollapsed = false;
+}]);
+
 blocJams.controller('Landing.controller', ['$scope', function($scope) {
     $scope.subText = 'Turn the music up!';
     $scope.heading = 'Bloc Jams';
